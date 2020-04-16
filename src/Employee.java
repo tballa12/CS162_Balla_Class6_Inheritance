@@ -13,28 +13,61 @@ public class Employee {
      * Parameterless constructor
      */
     public Employee(){
-        //TODO use default values
+        this("default",0,0,0);
     }
 
     /**
      * Parameterless constructor
-     *@param TODO A variable of type TODO
-     *@param TODO A variable of type TODO
-     *@param TODO A variable of type TODO
-     *@param TODO A variable of type TODO
+     *@param name A variable of type String
+     *@param baseSalary A variable of type double
+     *@param yearsOfExperience A variable of type int
+     *@param yearsAtCompany A variable of type int
      */
-    public Employee(/*TODO*/){
-        //TODO
+    public Employee(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany) {
+        this.name = name;
+        this.baseSalary = baseSalary;
+        this.yearsOfExperience = yearsOfExperience;
+        this.yearsAtCompany = yearsAtCompany;
     }
 
-    //TODO Add needed getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+
+    public void setYearsOfExperience(int yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    public int getYearsAtCompany() {
+        return yearsAtCompany;
+    }
+
+    public void setYearsAtCompany(int yearsAtCompany) {
+        this.yearsAtCompany = yearsAtCompany;
+    }
 
     /**
      * Returns the employees name, salary and motto
      * @return A value of data type String
      */
     public String toString(){
-        //TODO
+        return name + " $ " +  baseSalary + " " + motto();
     }
     /**
      * Returns a generic employee motto
