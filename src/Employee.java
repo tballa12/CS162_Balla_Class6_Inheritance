@@ -9,6 +9,7 @@ public class Employee {
     private int yearsOfExperience;
     private int yearsAtCompany;
 
+
     /**
      * Parameterless constructor
      */
@@ -76,4 +77,6 @@ public class Employee {
     public String motto(){
         return "We value our employees";
     }
+
+
 }
