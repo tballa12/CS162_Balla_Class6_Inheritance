@@ -5,9 +5,7 @@
  */
 public class Project_Manager extends Employee {
 
-    private int vacationL = 3;
-    private int vacationH = 4;
-    private int stock ;
+    private int stock = 100;
 
     /**
      * Parameterless constructor
@@ -28,21 +26,6 @@ public class Project_Manager extends Employee {
         super(name,2 * baseSalary,yearsOfExperience,yearsAtCompany);
     }
 
-    public int getVacationL() {
-        return vacationL;
-    }
-
-    public void setVacationL(int vacationL) {
-        this.vacationL = vacationL;
-    }
-
-    public int getVacationH() {
-        return vacationH;
-    }
-
-    public void setVacationH(int vacationH) {
-        this.vacationH = vacationH;
-    }
 
     public int getStock() {
         return stock;
@@ -58,7 +41,14 @@ public class Project_Manager extends Employee {
      */
     @Override
     public String toString(){
-        return super.getName() + " $ " +  super.getBaseSalary() + " " + motto() + vacation();
+        stockTotal();
+        if(super.getYearsAtCompany() == 0) {
+            return super.getName() + " $" + super.getBaseSalary() + " " + motto() + vacation(3,4);
+        }else{
+            return super.getName() + " $" + super.getBaseSalary() + " " + motto() + vacation(3,4) + "\n" + super.getName() + " has " + stock
+                    + " stock";
+        }
+
     }
 
     /**
@@ -71,30 +61,10 @@ public class Project_Manager extends Employee {
     }
 
     /**
-     * Returns vacation time and stock as string
-     * @return A value of type String
-     */
-    public String vacation(){
-        stockTotal();
-        if (super.getYearsAtCompany() >= 2) {
-            return "\nYou have " + 7 * getVacationH() + " days of vacation time and you have " + stock + " in company stock";
-        }
-        else if (super.getYearsAtCompany() == 1) {
-            return "\nYou have " + 7 * getVacationL() + " days of vacation time and you have " + stock + " in company stock";
-        }
-        else {
-            return "\nYou have " + 0 + " days of vacation time";
-        }
-
-
-
-    }
-
-    /**
      * adds stock total
      */
     public void stockTotal(){
-        stock = 100 * super.getYearsAtCompany();
+        stock = stock * super.getYearsAtCompany();
     }
 
 }

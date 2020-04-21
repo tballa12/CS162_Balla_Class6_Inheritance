@@ -5,9 +5,7 @@
  */
 public class Engineer extends Employee {
 
-    private int vacationL = 2;
-    private int vacationH = 3;
-    private double bonus ;
+    private double bonus = 1000;
 
     /**
      * Parameterless constructor
@@ -28,20 +26,12 @@ public class Engineer extends Employee {
         super(name,1.5 * baseSalary,yearsOfExperience,yearsAtCompany);
     }
 
-    public int getVacationL() {
-        return vacationL;
+    public double getBonus() {
+        return bonus;
     }
 
-    public void setVacationL(int vacationL) {
-        this.vacationL = vacationL;
-    }
-
-    public int getVacationH() {
-        return vacationH;
-    }
-
-    public void setVacationH(int vacationH) {
-        this.vacationH = vacationH;
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
     }
 
     /**
@@ -49,7 +39,15 @@ public class Engineer extends Employee {
      * @return A value of data type String
      */
     public String toString(){
-        return super.getName() + " $ " +  super.getBaseSalary() + " " + motto() + vacation();
+        signON();
+        if(bonus == 0) {
+            return super.getName() + " $" + super.getBaseSalary() + " " + motto() + vacation(2, 3);
+        }
+        else {
+            return super.getName() + " $" + super.getBaseSalary() + " " + motto() + vacation(2, 3) + "\n" + super.getName() + " has earned a $"
+                    + bonus + " sign on bonus.";
+
+        }
     }
 
     /**
@@ -62,54 +60,19 @@ public class Engineer extends Employee {
     }
 
     /**
-     * Returns vacation time and sign on bonus as string
-     * @return A value of type String
-     */
-    public String vacation(){
-        signON();
-        if (super.getYearsAtCompany() >= 2) {
-
-            if (bonus > 0){
-                return "\nYou have " + 7 * getVacationH() + " days of vacation time and your sign on bonus was $" + bonus;
-            }
-            else {
-                return "\nYou have " + 7 * getVacationH() + " days of vacation time";
-            }}
-        else if(super.getYearsAtCompany() == 1) {
-            if (bonus > 0){
-                return "\nYou have " + 7 * getVacationL() + " days of vacation time and your sign on bonus was $" + bonus;
-            }
-            else {
-                return "\nYou have " + 7 * getVacationL() + " days of vacation time";
-            }
-
-        }
-        else {
-            if (bonus > 0) {
-                return "\nYour sign on bonus was $" + bonus;
-            }
-            else{
-                return "\nYou have 0 vacation days";
-            }
-        }
-
-
-    }
-
-    /**
-     * method to see if a bonus is given and sets bonus to value if true
+     * method to see if a bonus is earned and sets bonus to correct value
      */
 
     public void signON(){
         if (super.getYearsOfExperience() >= 10){
-            this.bonus = 10000;
+            this.bonus = bonus * 10;
         }
         else if(super.getYearsOfExperience() >= 5){
-            this.bonus = 5000;
+            this.bonus = bonus * 5;
 
         }
         else{
-            this.bonus = 0.0;
+            this.bonus = 0;
         }
     }
 }

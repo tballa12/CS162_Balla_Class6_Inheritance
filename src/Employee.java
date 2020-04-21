@@ -68,7 +68,7 @@ public class Employee {
      * @return A value of data type String
      */
     public String toString(){
-        return name + " $ " +  baseSalary + " " + motto();
+        return name + " $" +  baseSalary + " " + motto();
     }
     /**
      * Returns a generic employee motto
@@ -78,7 +78,19 @@ public class Employee {
         return "We value our employees";
     }
 
+    public String vacation(int l, int h){
+        if (getYearsAtCompany() >= 2) {
+            return "\n" + getName() +" has " + 7 * h + " days of vacation time.";
+        }
+        else if (getYearsAtCompany() == 1) {
+            return "\n" + getName() + " has " + 7 * l + " days of vacation time.";
+        }
+        else {
+            return "";
+        }
 
+
+    }
 
 
 }

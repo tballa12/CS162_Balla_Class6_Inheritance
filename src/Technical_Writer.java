@@ -5,9 +5,6 @@
  */
 public class Technical_Writer extends Employee {
 
-    private int vacationL = 1;
-    private int vacationH = 2;
-
     /**
     * Parameterless constructor
     */
@@ -27,28 +24,12 @@ public class Technical_Writer extends Employee {
         super(name,baseSalary,yearsOfExperience,yearsAtCompany);
             }
 
-    public int getVacationL() {
-        return vacationL;
-    }
-
-    public void setVacationL(int vacationL) {
-        this.vacationL = vacationL;
-    }
-
-    public int getVacationH() {
-        return vacationH;
-    }
-
-    public void setVacationH(int vacationH) {
-        this.vacationH = vacationH;
-    }
-
     /**
      * Returns the technical writer name, salary and motto
      * @return A value of data type String
      */
     public String toString(){
-        return super.getName() + " $ " +  super.getBaseSalary() + " " + motto() + vacation();
+        return super.getName() + " $" +  super.getBaseSalary() + " " + motto() + vacation(1,2);
     }
     /**
      * Returns a Technical writer motto
@@ -58,21 +39,5 @@ public class Technical_Writer extends Employee {
         return  "You can always edit a bad page. You can’t edit a blank page.";
     }
 
-    /**
-     * Returns vacation time as string
-     * @return A value of type String
-     */
-    public String vacation(){
-        if (super.getYearsAtCompany() >= 2) {
-            return "\nYou have " + 7 * getVacationH() + " days of vacation time";
-        }
-        else if (super.getYearsAtCompany() == 1) {
-            return "\nYou have " + 7 * getVacationL() + " days of vacation time";
-        }
-        else {
-            return "\nYou have " + 0 + " days of vacation time";
-        }
 
-
-    }
 }
