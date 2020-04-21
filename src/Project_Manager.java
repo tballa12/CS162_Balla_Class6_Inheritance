@@ -44,13 +44,23 @@ public class Project_Manager extends Employee {
         this.vacationH = vacationH;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
     /**
      * Returns the Project_Manager name, salary and motto
      * @return A value of data type String
      */
+    @Override
     public String toString(){
         return super.getName() + " $ " +  super.getBaseSalary() + " " + motto() + vacation();
     }
+
     /**
      * Returns a Project_Manager  motto
      * @return A value of data type String
@@ -60,7 +70,12 @@ public class Project_Manager extends Employee {
         return  "There is nothing so useless as doing efficiently that which should not be done at all.";
     }
 
+    /**
+     * Returns vacation time and stock as string
+     * @return A value of type String
+     */
     public String vacation(){
+        stockTotal();
         if (super.getYearsAtCompany() >= 2) {
             return "\nYou have " + 7 * getVacationH() + " days of vacation time and you have " + stock + " in company stock";
         }
@@ -75,6 +90,9 @@ public class Project_Manager extends Employee {
 
     }
 
+    /**
+     * adds stock total
+     */
     public void stockTotal(){
         stock = 100 * super.getYearsAtCompany();
     }

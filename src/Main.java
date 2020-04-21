@@ -10,6 +10,11 @@ public class Main {
 	 System.out.println(sam);
 	 Engineer tom = new Engineer("Tom",3000,5,0);
 	 Engineer john = new Engineer("John",3000,10,10);
+	 Project_Manager nick = new Project_Manager("Paul",3000,2,2);
+	 System.out.println(nick);
+	 nick.setName("Nick");
+	 nick.setYearsAtCompany(14);
+	 System.out.println(nick);
 
 	 System.out.println(tom);
 	 System.out.println(john);

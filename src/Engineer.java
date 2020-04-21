@@ -51,6 +51,7 @@ public class Engineer extends Employee {
     public String toString(){
         return super.getName() + " $ " +  super.getBaseSalary() + " " + motto() + vacation();
     }
+
     /**
      * Returns a engineer  motto
      * @return A value of data type String
@@ -61,8 +62,8 @@ public class Engineer extends Employee {
     }
 
     /**
-     * Returns a engineer motto
-     * @return A value of data type String
+     * Returns vacation time and sign on bonus as string
+     * @return A value of type String
      */
     public String vacation(){
         signON();
@@ -94,6 +95,10 @@ public class Engineer extends Employee {
 
 
     }
+
+    /**
+     * method to see if a bonus is given and sets bonus to value if true
+     */
 
     public void signON(){
         if (super.getYearsOfExperience() >= 10){

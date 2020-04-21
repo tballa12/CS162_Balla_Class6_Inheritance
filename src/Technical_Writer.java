@@ -59,8 +59,8 @@ public class Technical_Writer extends Employee {
     }
 
     /**
-     * Returns a Technical writers motto
-     * @return A value of data type String
+     * Returns vacation time as string
+     * @return A value of type String
      */
     public String vacation(){
         if (super.getYearsAtCompany() >= 2) {
